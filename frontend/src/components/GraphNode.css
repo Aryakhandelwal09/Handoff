@@ -1,0 +1,35 @@
+.graph-node {
+  position: relative;
+  width: 170px;
+  background: var(--node);
+  border: 1.2px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .15s, transform .15s, opacity .25s, box-shadow .15s;
+}
+.graph-node:hover { border-color: var(--acc); transform: translateY(-2px); }
+.graph-node.selected { border-color: var(--acc); box-shadow: 0 0 0 2px rgba(124,140,255,0.25); }
+.graph-node.dimmed { opacity: .3; }
+.graph-node.dimmed:hover { opacity: .6; }
+
+.node-accent { height: 4px; width: 100%; background: var(--accent); }
+.node-main { padding: 8px 40px 9px 12px; }
+.node-name {
+  font-size: 13px; font-weight: 500; color: var(--text);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.node-meta { font-size: 10.5px; color: var(--mute); margin-top: 2px; }
+.node-badge {
+  position: absolute; top: 12px; right: 9px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--line);
+  font-size: 10px; color: var(--mute);
+  display: flex; align-items: center; justify-content: center;
+}
+.node-warn { position: absolute; top: 11px; right: 32px; font-size: 12px; color: var(--warn); }
+
+/* error trace highlighting */
+.graph-node.trace-dim { opacity: .2; }
+.graph-node.trace-hot,
+.graph-node.dimmed.trace-hot { opacity: 1; border-color: var(--hot); box-shadow: 0 0 0 3px rgba(255,107,94,0.2); }

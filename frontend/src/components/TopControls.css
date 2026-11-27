@@ -1,0 +1,26 @@
+.progress-wrap { display: flex; align-items: center; gap: 8px; }
+.progress-label { font-size: 13px; color: var(--mute); white-space: nowrap; }
+.progress-track {
+  width: 120px; height: 4px; border-radius: 4px; background: var(--line); overflow: hidden;
+}
+.progress-fill {
+  height: 100%; border-radius: 4px; background: var(--acc);
+  transition: width .25s ease;
+}
+
+.role-cluster { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.role-label { font-size: 13px; color: var(--mute); margin-right: 2px; }
+.role-pill {
+  font-size: 13px; color: var(--mute);
+  background: none; border: 1px solid var(--line);
+  padding: 2px 10px; border-radius: 999px; cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.role-pill:hover { color: var(--text); }
+.role-pill.active { border-color: var(--acc); color: var(--text); }
+.role-other-input {
+  width: 170px; background: var(--bg); border: 1px solid var(--acc);
+  border-radius: 999px; padding: 2px 10px; font-size: 13px; color: var(--text);
+  outline: none;
+}
+.role-other-input::placeholder { color: var(--text-faint); }

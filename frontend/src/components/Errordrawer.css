@@ -1,0 +1,32 @@
+/* frontend/components/ErrorDrawer.css
+   Colors fall back to the dark theme; override by defining these variables globally. */
+.err-drawer{--ed-bg:var(--bg,#08090c);--ed-panel:var(--panel,#0e1015);--ed-line:var(--line,#1f232c);--ed-text:var(--text,#e8eaf0);--ed-mute:var(--mute,#8a90a0);--ed-acc:var(--acc,#7c8cff);--ed-hot:var(--hot,#ff6b5e);--ed-ok:var(--ok,#4ade80);--ed-warn:var(--warn,#f5b84b);
+position:fixed;top:0;right:0;bottom:0;width:430px;max-width:100%;z-index:20;display:flex;flex-direction:column;background:var(--ed-panel);color:var(--ed-text);border-left:1px solid var(--ed-line);box-shadow:-18px 0 40px rgba(0,0,0,.35);transform:translateX(102%);visibility:hidden;transition:transform .25s,visibility .25s}
+.err-drawer.open{transform:none;visibility:visible}
+@media (max-width:900px){.err-drawer{top:auto;left:0;width:100%;height:86vh;border-left:0;border-top:1px solid var(--ed-line);border-radius:16px 16px 0 0;transform:translateY(102%)}}
+.ed-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--ed-line)}
+.ed-head h2{margin:0;font-size:15px}
+.ed-x{width:32px;height:32px;background:none;border:1px solid var(--ed-line);color:var(--ed-mute);border-radius:8px;cursor:pointer}
+.ed-body{padding:16px;overflow:auto}
+.ed-sub{color:var(--ed-mute);margin:0 0 10px;font-size:13px}
+.ed-seg{display:inline-flex;border:1px solid var(--ed-line);border-radius:99px;padding:2px;margin-bottom:12px}
+.ed-seg button{background:none;border:0;color:var(--ed-mute);border-radius:99px;padding:3px 12px;font:inherit;font-size:12px;cursor:pointer}
+.ed-seg button.on{background:var(--ed-acc);color:#fff}
+.err-drawer textarea{width:100%;height:150px;resize:vertical;background:var(--ed-bg);color:var(--ed-text);border:1px solid var(--ed-line);border-radius:8px;padding:10px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;box-sizing:border-box}
+.err-drawer :focus-visible{outline:2px solid var(--ed-acc);outline-offset:2px}
+.ed-actions{display:flex;gap:8px;margin-top:10px}
+.ed-go{background:var(--ed-acc);color:#fff;border:0;border-radius:8px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.ed-go:disabled{opacity:.5;cursor:not-allowed}
+.ed-ghost{background:none;border:1px solid var(--ed-line);color:var(--ed-mute);border-radius:8px;padding:9px 14px;font:inherit;cursor:pointer}
+.ed-card{border:1px solid var(--ed-line);border-radius:10px;padding:12px;margin-top:12px;background:var(--ed-bg);font-size:14px;line-height:1.5}
+.ed-card h4{margin:0 0 6px;font-size:13px}
+.ed-card p{margin:0 0 6px}
+.ed-card ol{margin:0;padding-left:18px}.ed-card li{margin-bottom:6px}
+.ed-card code{font:12px ui-monospace,Menlo,Consolas,monospace;background:var(--ed-line);padding:1px 5px;border-radius:4px}
+.ed-chip{display:inline-block;font:12px ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--ed-hot);color:var(--ed-hot);border-radius:6px;padding:1px 7px;margin:0 4px 4px 0}
+.ed-gen{display:inline-block;font-size:11px;border:1px solid var(--ed-warn);color:var(--ed-warn);border-radius:99px;padding:1px 8px;margin-bottom:6px}
+.ed-tag{font-size:11px;border-radius:99px;padding:1px 8px;margin-left:6px}
+.ed-tag.likely{background:color-mix(in srgb,var(--ed-ok) 20%,transparent);color:var(--ed-ok)}
+.ed-tag.possible{background:color-mix(in srgb,var(--ed-warn) 20%,transparent);color:var(--ed-warn)}
+.ed-err{border-color:var(--ed-hot);color:var(--ed-hot)}
+@media (prefers-reduced-motion:reduce){.err-drawer{transition:none}}

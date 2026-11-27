@@ -1,0 +1,24 @@
+.summary-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 14px 20px;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border-soft);
+  flex-wrap: wrap;
+}
+.summary-text {
+  flex: 1; min-width: 240px;
+  font-size: 13.5px; line-height: 1.6; color: var(--text-dim);
+}
+.summary-loading { color: var(--text-faint); font-style: italic; }
+
+.summary-controls { display: flex; gap: 10px; flex-shrink: 0; }
+.toggle-group {
+  display: flex; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 2px;
+}
+.toggle-group button {
+  border: none; background: transparent; color: var(--text-dim);
+  padding: 5px 11px; border-radius: 6px; font-size: 12px; font-weight: 500;
+  cursor: pointer;
+}
+.toggle-group button.active { background: var(--violet); color: #fff; }

@@ -1,0 +1,85 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 900px 500px at 50% 30%, rgba(124,140,255,0.16), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 80% 75%, rgba(79,209,197,0.10), transparent 60%),
+    var(--bg);
+  padding: 40px 24px;
+}
+.landing::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 900px 600px at 50% 40%, black 40%, transparent 85%);
+  pointer-events: none;
+}
+.landing-inner { position: relative; width: 100%; max-width: 560px; text-align: center; }
+.landing-focus { transition: opacity .25s ease; }
+.landing-focus.dim { opacity: .28; pointer-events: none; }
+
+.eyebrow-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 5px 12px; border-radius: 999px;
+  font-size: 12px; color: var(--text-dim); margin-bottom: 22px;
+}
+.eyebrow-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+.hero {
+  font-size: 40px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+.hero .accent {
+  background: linear-gradient(90deg, var(--violet), var(--teal));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-sub {
+  color: var(--text-dim); font-size: 16px; line-height: 1.6;
+  max-width: 440px; margin: 0 auto 34px;
+}
+
+.paste-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 8px; display: flex; gap: 8px;
+  box-shadow: 0 0 0 1px rgba(124,140,255,0.06), 0 20px 60px -20px rgba(0,0,0,0.6);
+}
+.paste-card input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: var(--text); font-family: 'JetBrains Mono', monospace;
+  font-size: 14px; padding: 12px 14px;
+}
+.paste-card input::placeholder { color: var(--text-faint); }
+.paste-card button {
+  background: var(--violet); color: #fff; border: none;
+  padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 14px;
+  cursor: pointer; transition: filter .15s;
+}
+.paste-card button:hover { filter: brightness(1.1); }
+
+.landing-footnote { margin-top: 16px; font-size: 12.5px; color: var(--text-faint); }
+.landing-footnote code {
+  font-family: 'JetBrains Mono', monospace; color: var(--text-dim);
+  background: var(--surface); padding: 1px 6px; border-radius: 5px;
+}
+
+.error-block {
+  margin-top: 22px; background: var(--surface);
+  border: 1px solid rgba(239,127,155,0.35); border-radius: 14px;
+  padding: 22px 24px; text-align: left;
+  box-shadow: 0 0 0 1px rgba(239,127,155,0.08), 0 20px 50px -18px rgba(239,127,155,0.25);
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.error-icon { flex-shrink: 0; width: 46px; height: 46px; }
+.error-copy h4 { margin: 0 0 4px; font-size: 14.5px; font-weight: 600; color: var(--text); }
+.error-copy p { margin: 0 0 12px; font-size: 13px; line-height: 1.55; color: var(--text-dim); }
+.error-copy button {
+  background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+  padding: 7px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 500;
+  cursor: pointer;
+}
+.error-copy button:hover { border-color: var(--violet); }

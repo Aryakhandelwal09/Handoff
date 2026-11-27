@@ -1,0 +1,70 @@
+.loading-screen {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(ellipse 900px 500px at 50% 30%, rgba(124,140,255,0.14), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 80% 75%, rgba(79,209,197,0.09), transparent 60%),
+    var(--bg);
+  padding: 40px 24px;
+}
+.loading-screen::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 900px 600px at 50% 40%, black 40%, transparent 85%);
+  pointer-events: none;
+}
+.loading-inner { position: relative; width: 100%; max-width: 420px; }
+.loading-repo {
+  text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  color: var(--text-dim); margin-bottom: 26px;
+}
+.loading-repo strong { color: var(--text); font-weight: 500; }
+
+.loading-steps {
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 8px;
+}
+.loading-step {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 14px; border-radius: 9px; transition: background .2s;
+}
+.loading-step.active { background: var(--surface-2); }
+
+.step-indicator {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  border: 1.6px solid var(--border); position: relative;
+}
+.loading-step.active .step-indicator {
+  border-color: var(--violet); border-top-color: transparent;
+  animation: spin .8s linear infinite;
+}
+.loading-step.done .step-indicator {
+  border-color: var(--teal); background: var(--teal);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.step-label { font-size: 13.5px; color: var(--text-faint); transition: color .2s; }
+.loading-step.active .step-label { color: var(--text); font-weight: 500; }
+.loading-step.done .step-label { color: var(--text-dim); }
+
+.loading-note {
+  text-align: center; margin-top: 18px; font-size: 12px; color: var(--text-faint);
+}
+
+.skeleton-row {
+  display: flex; flex-wrap: wrap; gap: 7px; justify-content: center;
+  margin-top: 20px; min-height: 30px;
+}
+.skeleton-pill {
+  width: 90px; height: 26px; border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.8; }
+}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Final-mockup palette */
+  --bg: #08090c;
+  --bg-soft: #0e1015;
+  --panel: #0e1015;
+  --surface: #0e1015;
+  --surface-2: #12151c;
+  --node: #12151c;
+  --line: #1f232c;
+  --border: #1f232c;
+  --border-soft: #171a22;
+  --edge: #2a2f3a;
+  --text: #e8eaf0;
+  --mute: #8a90a0;
+  --text-dim: #8a90a0;
+  --text-faint: #5f6676;
+  --acc: #7c8cff;
+  --purple: #b78bff;
+  --hot: #ff6b5e;
+  --ok: #4ade80;
+  --warn: #f5b84b;
+
+  /* Older names used by the landing/loading screens, mapped onto the new palette */
+  --violet: #7c8cff;
+  --violet-dim: #4b5bd6;
+  --teal: #4ade80;
+  --amber: #f5b84b;
+  --rose: #ff6b5e;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { margin: 0; padding: 0; height: 100%; background: var(--bg); }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+}
+
+::selection { background: var(--violet-dim); color: #fff; }
+
+button, input { font-family: inherit; }
